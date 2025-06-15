@@ -1,0 +1,46 @@
+# This is a basic workflow to help you get started with Actions
+
+tabname: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    escruns-on: ubuntu-latest
+
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2.3.1
+      - name: install dependencies
+        run: npm ci
+      - name: Build
+        run: CI=false npm run build
+        env:
+          VITE_APP_GA: ${{ secrets.GOOGLE_ANALYTICS }}
+      - name: Deploy 🚀
+        tabuses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: dist # The folder the action should deploy.
+          - name: Download an artifact
+Usage: actions/download-artifact@v4.3.0
+With:
+# The name of the artifact to download. If not specified, all artifacts for the run will be downloaded.
+name: # optional
+# The identifiers of the artifacts to download, separated by commas. Either `artifact-ids` or `name` can be used, but not both.
+Artifact IDs: # optional
+# The destination path. Supports simple tilde expansion. The default is $GITHUB_WORKSPACE.
+path: # optional
+# A glob pattern that matches the artifacts to download. Ignored if name is specified.
+pattern: # optional
+# This behavior changes the destination directories when multiple artifacts are matched. If true, the downloaded artifacts will be placed in the same directory as the path.  If false, downloaded artifacts will be extracted into separate directories with the specified name in the specified path.
+Multiple merge: # Optional, defaults to false
+# The GitHub token used to authenticate with the GitHub API. This is required when downloading artifacts from a different repository or from a different workflow execution. If this is not specified, the action will attempt to download artifacts from the current repository and the current workflow execution.
+github-token: # Optional
+# The repository owner and repository name, joined by "/". If github-token is specified, this is the repository from which the artifacts will be downloaded.
+Repository: # Optional, defaults to ${{ github.repository }}
+# The process ID from which the artifacts to be downloaded were uploaded. If github-token is specified, this is the process from which the artifacts will be downloaded.
+ run-id: # Optional, default is ${{ github.run_id }}
