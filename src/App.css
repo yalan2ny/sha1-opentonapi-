@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css?family=Mulish:400,600,700,800");
+
+body {
+  background-color: #f7f9fb;
+  margin: 0;
+  font-family: "Mulish";
+  padding-bottom: 40px;
+}
+
+.App {
+  max-width: 1160px;
+  margin: 0 auto;
+}
