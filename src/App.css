@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css?family=Mulish:400,500,600,700,800");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap");
+
+body {
+  background-color: #f7f9fb;
+  margin: 0;
+  font-family: "Mulish";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.App {
+  max-width: 1160px;
+  margin: 0 auto;
+}
