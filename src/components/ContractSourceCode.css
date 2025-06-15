@@ -1,0 +1,61 @@
+#myVerifierFiles {
+  border-right: 1px solid #e8e8e8;
+  width: 240px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+#myVerifierContent code {
+  background: #fff;
+  font-size: 14px;
+  max-width: 100%;
+  line-height: 25px;
+  padding-left: 20px;
+  max-height: 800px;
+  -webkit-text-size-adjust: 100%;
+}
+
+#myVerifierFiles .contract-verifier-file.active {
+  background: #f7f9fb;
+}
+
+#myVerifierFiles .contract-verifier-tree-item {
+  padding: 13px 6px;
+}
+
+@media screen and (max-width: 1200px) {
+  #myVerifierFiles {
+    width: 190px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  #myVerifierFiles {
+    width: 170px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  #myVerifierFiles {
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  #myVerifierContainer {
+    flex-direction: column;
+  }
+
+  #myVerifierContent code {
+    padding-left: 0;
+  }
+
+  #myVerifierFiles {
+    max-height: 400px;
+    height: content-box;
+    overflow-y: scroll;
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e8e8e8;
+  }
+}
